@@ -6,7 +6,7 @@
 @import "compass/reset";
 @import "compass/css3/images";
 
-div#page {
+body {
   background-size: 60px;
   @include background(
     linear-gradient(
