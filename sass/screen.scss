@@ -7,17 +7,19 @@
 @import "compass/css3/images";
 
 body {
-  background-size: 60px;
-  @include background(
-    linear-gradient(
-      left, 
-      rgba(0, 0, 0, 0.1) 50%, 
-      rgba(0, 0, 0, 0.07) 50%
-  ));
+   background: #bdbcba url("/images/bg-hatch.png");
 }
 h1 { font-size: 40px; }
 h2 { font-size: 28px; }
 p { margin: 0 0 15px 0; }
+#header {
+  background-image: url("/images/bg-header.png");
+  height:30px;
+}
+#footer {
+  background-image: url("/images/bg-header.png");
+  height:30px;
+}
 #sidebar {
   background-color: white;
   position: fixed;
@@ -28,7 +30,10 @@ p { margin: 0 0 15px 0; }
   float: right;
 }
 #page-warp {
+  background: #eeeeee;
+  //height: 900px;
   margin: 15px auto;
+  padding: 30px;
   position: relative;
   width: 900px;
 }

@@ -69,31 +69,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 9, ../../sass/screen.scss */
 body {
-  background-size: 60px;
-  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(50%, rgba(0, 0, 0, 0.07)));
-  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.07) 50%);
-  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.07) 50%);
-  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.07) 50%);
-  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.07) 50%);
-  background: linear-gradient(left, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.07) 50%);
+  background: #bdbcba url("/images/bg-hatch.png");
 }
 
-/* line 18, ../../sass/screen.scss */
+/* line 12, ../../sass/screen.scss */
 h1 {
   font-size: 40px;
 }
 
-/* line 19, ../../sass/screen.scss */
+/* line 13, ../../sass/screen.scss */
 h2 {
   font-size: 28px;
 }
 
-/* line 20, ../../sass/screen.scss */
+/* line 14, ../../sass/screen.scss */
 p {
   margin: 0 0 15px 0;
 }
 
-/* line 21, ../../sass/screen.scss */
+/* line 15, ../../sass/screen.scss */
+#header {
+  background-image: url("/images/bg-header.png");
+  height: 30px;
+}
+
+/* line 19, ../../sass/screen.scss */
+#footer {
+  background-image: url("/images/bg-header.png");
+  height: 30px;
+}
+
+/* line 23, ../../sass/screen.scss */
 #sidebar {
   background-color: white;
   position: fixed;
@@ -104,20 +110,22 @@ p {
   float: right;
 }
 
-/* line 30, ../../sass/screen.scss */
+/* line 32, ../../sass/screen.scss */
 #page-warp {
+  background: #eeeeee;
   margin: 15px auto;
+  padding: 30px;
   position: relative;
   width: 900px;
 }
 
-/* line 35, ../../sass/screen.scss */
+/* line 40, ../../sass/screen.scss */
 #content {
   width: 500px;
   float: left;
 }
 
-/* line 39, ../../sass/screen.scss */
+/* line 44, ../../sass/screen.scss */
 .clear {
   clear: left;
 }
