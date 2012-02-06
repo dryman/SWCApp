@@ -21,7 +21,23 @@
 
 </head>
 <body>
+<div id="header"></div>
+<div class="color-wheel">
+  <span class="f1"></span>
+  <span class="f2"></span>
+  <span class="f3"></span>
+  <span class="f4"></span>
+  <span class="f5"></span>
+</div>
 <% content %>
+<div class="color-wheel">
+  <span class="f1"></span>
+  <span class="f2"></span>
+  <span class="f3"></span>
+  <span class="f4"></span>
+  <span class="f5"></span>
+<div class="clear"></div>
+</div>
 <div id="footer">
 Powered by <a href="http://perldancer.org/">Dancer</a> <% dancer_version %>
 </div>
