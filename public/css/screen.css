@@ -85,18 +85,23 @@ h2 {
 }
 
 /* line 18, ../../sass/screen.scss */
+a:link {
+  color: #4b8db5;
+}
+
+/* line 19, ../../sass/screen.scss */
 p {
   font-size: 18px;
   margin: 0 0 15px 0;
 }
 
-/* line 19, ../../sass/screen.scss */
+/* line 20, ../../sass/screen.scss */
 #header {
   background-image: url("/images/bg-header.png");
   height: 30px;
 }
 
-/* line 23, ../../sass/screen.scss */
+/* line 24, ../../sass/screen.scss */
 #footer {
   background-image: url("/images/bg-header.png");
   color: #cdcdcd;
@@ -105,7 +110,7 @@ p {
   padding-left: 50px;
 }
 
-/* line 30, ../../sass/screen.scss */
+/* line 31, ../../sass/screen.scss */
 #sidebar {
   background-color: #efefef;
   -moz-border-radius: 15px;
@@ -123,12 +128,12 @@ p {
   left: 50%;
   float: right;
 }
-/* line 42, ../../sass/screen.scss */
+/* line 43, ../../sass/screen.scss */
 #sidebar li {
   line-height: 1.5em;
 }
 
-/* line 44, ../../sass/screen.scss */
+/* line 45, ../../sass/screen.scss */
 #page-warp {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -146,13 +151,13 @@ p {
   width: 760px;
 }
 
-/* line 55, ../../sass/screen.scss */
+/* line 56, ../../sass/screen.scss */
 #content {
   width: 550px;
   float: left;
 }
 
-/* line 59, ../../sass/screen.scss */
+/* line 60, ../../sass/screen.scss */
 .color-wheel > span {
   display: block;
   float: left;
@@ -161,33 +166,33 @@ p {
   height: 4px;
 }
 
-/* line 67, ../../sass/screen.scss */
+/* line 68, ../../sass/screen.scss */
 .color-wheel .f1 {
   left: 0;
   background: #f3a01e;
 }
-/* line 68, ../../sass/screen.scss */
+/* line 69, ../../sass/screen.scss */
 .color-wheel .f2 {
   left: 21%;
   background: #d05d2a;
 }
-/* line 69, ../../sass/screen.scss */
+/* line 70, ../../sass/screen.scss */
 .color-wheel .f3 {
   left: 41%;
   background: #9dc425;
 }
-/* line 70, ../../sass/screen.scss */
+/* line 71, ../../sass/screen.scss */
 .color-wheel .f4 {
   left: 61%;
   background: #4b8db5;
 }
-/* line 71, ../../sass/screen.scss */
+/* line 72, ../../sass/screen.scss */
 .color-wheel .f5 {
   left: 81%;
   background: #7c48b5;
 }
 
-/* line 73, ../../sass/screen.scss */
+/* line 74, ../../sass/screen.scss */
 .clear {
   clear: left;
 }
