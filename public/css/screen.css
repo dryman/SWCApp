@@ -152,12 +152,19 @@ p {
 }
 
 /* line 56, ../../sass/screen.scss */
-#content {
+#main-container {
   width: 550px;
   float: left;
 }
 
 /* line 60, ../../sass/screen.scss */
+#title {
+  background: url("/images/bg-diag.png") left bottom repeat-x;
+  padding: 0 0 30px;
+  margin-bottom: 40px;
+}
+
+/* line 65, ../../sass/screen.scss */
 .color-wheel > span {
   display: block;
   float: left;
@@ -166,33 +173,33 @@ p {
   height: 4px;
 }
 
-/* line 68, ../../sass/screen.scss */
+/* line 73, ../../sass/screen.scss */
 .color-wheel .f1 {
   left: 0;
   background: #f3a01e;
 }
-/* line 69, ../../sass/screen.scss */
+/* line 74, ../../sass/screen.scss */
 .color-wheel .f2 {
   left: 21%;
   background: #d05d2a;
 }
-/* line 70, ../../sass/screen.scss */
+/* line 75, ../../sass/screen.scss */
 .color-wheel .f3 {
   left: 41%;
   background: #9dc425;
 }
-/* line 71, ../../sass/screen.scss */
+/* line 76, ../../sass/screen.scss */
 .color-wheel .f4 {
   left: 61%;
   background: #4b8db5;
 }
-/* line 72, ../../sass/screen.scss */
+/* line 77, ../../sass/screen.scss */
 .color-wheel .f5 {
   left: 81%;
   background: #7c48b5;
 }
 
-/* line 74, ../../sass/screen.scss */
+/* line 79, ../../sass/screen.scss */
 .clear {
   clear: left;
 }

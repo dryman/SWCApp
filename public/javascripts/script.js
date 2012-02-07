@@ -7,9 +7,9 @@ var key_manager = function () {
   return {
     registerKey: function(callBack) {
       if ($.browser.mozilla) {
-        $.keypress(function(e) { callBack(e.which); });
+        $(document).keypress(function(e) { callBack(e.which); });
       } else {
-        $.keydown(function(e) {
+        $(document).keydown(function(e) {
           var key_code = $.browser.ie ? e.KeyCode : e.which;
           callBack(key_code);
         });
@@ -17,8 +17,8 @@ var key_manager = function () {
     },
     clearKeys: function() {
       $.browser.mozilla ?
-        $.keypress(function(){}):
-        $.keydown(function(){});
+        $(document).keypress(function(){}):
+        $(document).keydown(function(){});
     }
   }
 }();
@@ -40,3 +40,23 @@ var keycode = {
 }
 
 console.log("hello world");
+
+function loadArticle () {
+  $.get('/example',
+    function(json){
+      $.cookie("article",JSON.stringify(json));
+    }, 'json');
+}
+
+$(function(){
+  loadArticle();
+  // $.cookie("article","foo");
+  key_manager.registerKey(function(k){
+    switch(k){
+      case keycode.right: 
+        $('#title > h1').html(JSON.parse($.cookie("article")).hello);
+        break;
+      default: break;
+    }
+  });
+});

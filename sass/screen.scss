@@ -53,9 +53,14 @@ p { font-size: 18px; margin: 0 0 15px 0; }
   position: relative;
   width: 760px;
 }
-#content {
+#main-container {
   width: 550px; 
   float: left;
+}
+#title {
+  background: url("/images/bg-diag.png") left bottom repeat-x;
+  padding: 0 0 30px;
+  margin-bottom: 40px;
 }
 .color-wheel > span {
   display: block;
