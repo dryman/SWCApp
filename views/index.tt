@@ -14,6 +14,11 @@
       <div id="page-warp">
             <div id="main-container">
               <div id="title"><h1>Perl is dancing</h1></div>
+              <form action "/" id="postForm">
+                <input name="s" placehoder="ptt id" type="text" />
+                <input name="submit" type="submit" value="go" />
+                <div id=result></div>
+              </form>
               <div id="content">
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
                 fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies

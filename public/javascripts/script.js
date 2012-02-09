@@ -7,18 +7,27 @@ var key_manager = function () {
   return {
     registerKey: function(callBack) {
       if ($.browser.mozilla) {
-        $(document).keypress(function(e) { callBack(e.which); });
+        document.onkeypress = function(e){
+          callBack(e.which); 
+        };
       } else {
-        $(document).keydown(function(e) {
+        document.onkeydown = function(e){
           var key_code = $.browser.ie ? e.KeyCode : e.which;
           callBack(key_code);
-        });
+        };
       }
     },
     clearKeys: function() {
-      $.browser.mozilla ?
-        $(document).keypress(function(){}):
-        $(document).keydown(function(){});
+      if ($.browser.mozilla){
+        document.onkeypress = function(e){
+          console.log("keypress cleared");
+        };
+      }
+      else {
+        document.onkeydown = function(e){
+          console.log("keydown cleared");
+        };
+      }
     }
   }
 }();
@@ -51,12 +60,27 @@ function loadArticle () {
 $(function(){
   loadArticle();
   // $.cookie("article","foo");
-  key_manager.registerKey(function(k){
+   
+   key_manager.registerKey(function(k){
     switch(k){
       case keycode.right: 
         $('#title > h1').html(JSON.parse($.cookie("article")).hello);
+        console.log("called registerkey");
         break;
       default: break;
     }
+  });
+  key_manager.clearKeys();
+  $("#postForm").submit(function(event){
+    console.log("submit");
+    event.preventDefault();
+    var $form = $(this);
+    var term = $form.find('input[name="s"]').val();
+    var url = $form.attr('action');
+    $.post(url, {s:term},
+      function(data){
+        var content = $(data).find('#content');
+        $("#result").empty().append(content);
+      });
   });
 });
