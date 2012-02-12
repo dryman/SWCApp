@@ -10,7 +10,7 @@ get '/' => sub {
 
 get '/example' => sub {
   { 
-    hello => "world",
+    hello => "The title is changed",
     cool => "haha",
   }
 };

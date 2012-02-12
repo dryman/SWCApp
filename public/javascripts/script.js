@@ -70,7 +70,7 @@ $(function(){
       default: break;
     }
   });
-  key_manager.clearKeys();
+  // key_manager.clearKeys();
   $("#postForm").submit(function(event){
     console.log("submit");
     event.preventDefault();
