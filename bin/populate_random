@@ -1,0 +1,60 @@
+#!/usr/bin/env perl
+use common::sense;
+use autodie;
+use List::Util 'shuffle';
+use lib 'lib';
+use IISApp::DB;
+
+$,="\t";
+my $schema = IISApp::DB->connect('dbi:SQLite:dbname=development.db');
+my $article_rs = $schema->resultset('Article');
+my $user_rs = $schema->resultset('User');
+my $random_rs = $schema->resultset('RandomSet');
+my $timestamp_rs = $schema->resultset('TimeStamp');
+
+sub get_articles {
+  my ($cluster, $take) = @_;
+  my @articles = shuffle $article_rs->search({ cluster => $cluster }, {})->all;
+  # say $_->id,$_->cluster,$_->title for @articles;
+  return @articles[0..$take-1];
+}
+
+# cluster 1:  6
+# cluster 2:  5
+# cluster 3:  5
+# cluster 4:  5
+# cluster 5:  7
+# cluster 6:  6
+  
+
+# CLUSTER ID STARTS FROM 1
+
+# 35 random, 3 cluster x 5 categorized
+for my $it (1..5) {
+  my (@set,@clusters);
+  push @set, &get_articles(0,35);
+  @clusters[0..2] = shuffle 1..6;
+  push @set, &get_articles($_,5) for @clusters;
+  @set = shuffle @set;
+  $random_rs->create({
+    set_id => $it,
+    article => $set[$_],
+    ord => $_+1,
+  }) for 0..$#set;
+};
+
+# 35 random, 5 cluster x 3 categorized
+for my $it (6..10){
+  my (@set,@clusters);
+  push @set, &get_articles(0,35);
+  @clusters[0..4] = shuffle 1..6;
+  push @set, &get_articles($_,3) for @clusters;
+  @set = shuffle @set;
+  $random_rs->create({
+    set_id => $it,
+    article => $set[$_],
+    ord => $_+1,
+  }) for 0..$#set;
+};
+
+
