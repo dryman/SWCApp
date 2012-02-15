@@ -49,11 +49,13 @@ var keycode = {
 }
 
 console.log("hello world");
+var ajax_content;
+var count=0;
 
 function loadArticle () {
-  $.get('/example',
+  $.get('/test',
     function(json){
-      $.cookie("article",JSON.stringify(json));
+      ajax_content=json;
     }, 'json');
 }
 
@@ -64,7 +66,8 @@ $(function(){
    key_manager.registerKey(function(k){
     switch(k){
       case keycode.right: 
-        $('#title > h1').html(JSON.parse($.cookie("article")).hello);
+        $('#title > h1').html(ajax_content.articles[count].title);
+        count++;
         console.log("called registerkey");
         break;
       default: break;
