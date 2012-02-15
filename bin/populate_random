@@ -3,10 +3,10 @@ use common::sense;
 use autodie;
 use List::Util 'shuffle';
 use lib 'lib';
-use IISApp::DB;
+use SWCApp::DB;
 
 $,="\t";
-my $schema = IISApp::DB->connect('dbi:SQLite:dbname=development.db');
+my $schema = SWCApp::DB->connect('dbi:SQLite:dbname=development.db');
 my $article_rs = $schema->resultset('Article');
 my $user_rs = $schema->resultset('User');
 my $random_rs = $schema->resultset('RandomSet');

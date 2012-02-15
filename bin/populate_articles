@@ -6,7 +6,7 @@ use SWCApp::DB;
 use Mojo::DOM;
 
 my $schema = SWCApp::DB
-  ->connect("dbi:SQLite:dbname=developement.db");
+  ->connect("dbi:SQLite:dbname=development.db");
 my $article_rs = $schema->resultset('Article');
 opendir my $dh, "data/1/";
 my @dirs = grep /^[^.]/, readdir $dh;
