@@ -45,12 +45,14 @@ var keycode = {
   "six": 54, 
   "seven": 55, 
   "eight": 56, 
-  "nine": 57
+  "nine": 57,
+  "n": 78
 }
 
 console.log("hello world");
 var ajax_content;
 var count=0;
+var post_content;
 
 function loadArticle () {
   $.get('/test',
@@ -65,9 +67,10 @@ $(function(){
    
    key_manager.registerKey(function(k){
     switch(k){
-      case keycode.right: 
+      case keycode.n: 
         $('#title > h1').html(ajax_content.articles[count].title);
-        count++;
+        $('#content').html(ajax_content.articles[count].content);
+        if (count < ajax_content.articles.length-1) count++;
         console.log("called registerkey");
         break;
       default: break;
