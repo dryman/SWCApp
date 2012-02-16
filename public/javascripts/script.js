@@ -81,12 +81,11 @@ $(function(){
     console.log("submit");
     event.preventDefault();
     var $form = $(this);
-    var term = $form.find('input[name="s"]').val();
+    var term = $form.find('input[name="abc"]').val();
     var url = $form.attr('action');
-    $.post(url, {s:term},
-      function(data){
-        var content = $(data).find('#content');
-        $("#result").empty().append(content);
-      });
+    $.post(url, {abc: term},
+      function(json){
+        $("#title > h1").html(ajax.abc);
+      },"json");
   });
 });

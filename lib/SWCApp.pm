@@ -69,4 +69,10 @@ get '/test' => sub {
   }
 };
 
+post '/ajax' => sub {
+  debug params->{abc};
+  my $ha = from_json params->{abc};
+  $ha;
+};
+
 true;
