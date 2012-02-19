@@ -14,8 +14,8 @@
       <div id="page-warp">
             <div id="main-container">
               <div id="title"><h1>Title</h1></div>
-              <form action="/ajax" id="postForm" method="post">
-                <input name="abc" placehoder="ptt id" type="text" />
+              <form action="/ajax" id="pttID_form" method="post">
+                <input name="pttid" placehoder="ptt id" type="text" />
                 <input name="submit" type="submit" value="go" />
                 <div id=result></div>
               </form>

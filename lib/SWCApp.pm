@@ -21,7 +21,7 @@ get '/example' => sub {
   }
 };
 
-get '/test' => sub {
+post '/ajax' => sub {
   my $schema = SWCApp::DB->connect('dbi:SQLite:dbname=development.db',"","",{sqlite_unicode=>1});
   my $r_rs = $schema->resultset('RandomSet');
 
@@ -63,16 +63,11 @@ get '/test' => sub {
   my @answers = map {$_ <= 2 ? 1: 0} @r_nums;
 
   {
+    success => 1,
     articles => \@articles,
-    test_snippets => \@test_snippets,
+    snippets => \@test_snippets,
     answers => \@answers,
   }
-};
-
-post '/ajax' => sub {
-  debug params->{abc};
-  my $ha = from_json params->{abc};
-  $ha;
 };
 
 true;

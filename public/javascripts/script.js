@@ -2,34 +2,21 @@
  * all rights reserved
  * GPL 2.1 license
  */
-
 var key_manager = function () {
-  var eventPool = new Array ();
-  var registerToBrowser = function () {
-    if ($.browser.mozilla) {
-      document.onkeypress = function(e){
-        var ev;
-        for (ev in eventPool) {
-          if (ev.keycode === e.which) { ev.callback() }
-        }
-      };
-    } 
-    else {
-      document.onkeydown = function(e){
-        var key_code = $.browser.ie ? e.KeyCode : e.which;
-        var ev;
-        for (ev in eventPool) {
-          if (ev.keycode === key_code) { ev.callback() }
-        }
-      };
-    }
-  };
   return {
-    registerKey: function(ev) {
-      eventPool.push(ev); // ev = {keycode: code, callback: cb};
+    registerKey: function(callBack) {
+      if ($.browser.mozilla) {
+        document.onkeypress = function(e){
+          callBack(e.which); 
+        };
+      } else {
+        document.onkeydown = function(e){
+          var key_code = $.browser.ie ? e.KeyCode : e.which;
+          callBack(key_code);
+        };
+      }
     },
     clearKeys: function() {
-      eventPool = new Array();
       if ($.browser.mozilla){
         document.onkeypress = function(e){
           console.log("keypress cleared");
@@ -43,48 +30,7 @@ var key_manager = function () {
     }
   }
 }();
-var fsm = function () {
-  var registerKey = function(state) {
-    var obj;
-    var eventArray = statePool[state];
-    for (obj in eventArray) {
-      if (obj.keycode) {
-        key_manager.registerKey({
-          keycode: obj.keycode,
-          callback: function (){
-            var transition = obj.callback();
-            if (transition) {
-              // change state and unregister key?
-            }
-          }
-        })
-      }
-      else {
-        if (obj.callback()){
-          // do transition and unrigister key
-        }
-      }
-  };
-  var currentState;
-  var statePool;
-  return {
-    createStates: function(){
-      var arg;
-      for (arg in arguments){
-        statePool[arg] = new Array();
-      }
-      currentState = arguments[0]; // init state to first argument
-    },
-    setTransition: function(input){
-      statePool[input.from].push({
-        keycode: input.keycode,
-        callback: input.callback,
-        dest: input.to
-      });
-    },
-    startFSM: function(){}
-  }
-}();
+
 
 var keycode = { 
   "right": 39, 
@@ -104,67 +50,111 @@ var keycode = {
 }
 
 console.log("hello world");
-var records = new Array();
-var ajax_content;
 
-function loadArticle () {
-  $.get('/test', function(json){ ajax_content=json; }, 'json');
-  var count=0;
-  var currentDate = new Date();
-  $('#title > h1').html(ajax_content.articles[count].title);
-  $('#content').html(ajax_content.articles[count].content);
-
-  key_manager.registerKey(function(k){
-    switch(k){
-      case keycode.n: 
-        $('#title > h1').html(ajax_content.articles[count].title);
-        $('#content').html(ajax_content.articles[count].content);
-        count++;
-        console.log("called registerKey");
-        if (count >= ajax_content.articles.length) key_manager.clearKeys();
-        break;
-      case keycode.one:
-        break;
-      case keycode.two:
-      case keycode.three:
-      case keycode.four:
-      case keycode.five:
-      case keycode.six:
-      case keycode.seven:
-      case keycode.eight:
-      case keycode.nine:
-      case keycode.zero:
-      default: break;
+function SWCModule(){
+  var count;
+  var records = new Array()
+  var ajax_content;
+  var snippets;
+  var answers;
+  var articles;
+  var pttid;
+  var ts;
+  var te;
+  var storeRecord = function (option) {
+    te = new Date();
+    var article = articles[count];
+    records.push({
+      id: article.id,
+      cluster: article.cluster,
+      msec: ts.getTime(),
+      diff: te.getTime() - ts.getTime(),
+      option: option
+    });
+    count++;
+    if (count >= articles.length){
+      key_manager.clearKeys();
+      renderSnippet();
     }
-  });
-}
-function run(article) {
-  $('#title > h1').html(article.title);
-  $('#cotent').html(article.title);
-  var currentDate = new Date();
-  records.push({
-    id: article.id,
-    cluster: article.cluster,
-    msec: 0,
-    diff: 0,
-    option: 1
-  });
-}
+    else {
+      renderArticle();
+    }
+  };
+  var renderArticle = function () {
+    var article = articles[count];
+    $('#title > h1').html(article.title);
+    $('#content').html(article.content);
+    console.log("renderArticle "+ article.title +" count = " + count);
+    ts = new Date();
+    key_manager.registerKey(function(e){
+      switch(e){
+        case 48: storeRecord(0); break;
+        case 49: storeRecord(1); break;
+        case 50: storeRecord(2); break;
+        case 51: storeRecord(3); break;
+        case 52: storeRecord(4); break;
+        case 53: storeRecord(5); break;
+        case 54: storeRecord(6); break;
+        case 55: storeRecord(7); break;
+        case 56: storeRecord(8); break;
+        case 57: storeRecord(9); break;
+        case 78: storeRecord(-1); break; // n
+      }
+    });
+  };
+  var renderSnippet = function () {
+    console.log("renderSnippet");
+    // render it
+    // wait post, do post
+    /*
+    $('#snippet').submit(function(ev){
+      ev.preventDevault();
+      var $form = $(this);
+      $.post('/upload',{
+        // our records
+      },function(json){
+        renderThankyou();
+      },"json");
+    });
+    */
+  };
+  var renderThankyou = function () {
+    // render it
+  };
+  return {
+    init_post: function (){
+      $("#pttID_form").submit(function(event){
+        event.preventDefault();
+        var $form = $(this);
+        var $term = $form.find('input[name="pttid"]').val()
+        if ($term === '') {
+          alert("請填入您的ptt id！");
+          return false;
+        }
+        $.post('/ajax', {pttid: $term},
+          function(json){
+            if (json.success) {
+              articles = json.articles;
+              snippets = json.snippets;
+              answers = json.answers;
+              count = 0;
+              renderArticle();
+            }
+            else {
+              console.log("failed");
+            }
+          },"json");
+      });
+    },
+    ajax_content: ajax_content,
+    snippets: snippets,
+    answers: answers,
+    articles: articles,
+    pttid: pttid
+  };
+};
 
 $(function(){
-  loadArticle();
-  // $.cookie("article","foo");
-   
-  // key_manager.clearKeys();
-  $("#postForm").submit(function(event){
-    console.log("submit");
-    event.preventDefault();
-    var $form = $(this);
-    var term = $form.find('input[name="abc"]').val();
-    var url = $form.attr('action');
-    $.post(url, {abc: term},
-      function(json){
-        $("#title > h1").html(ajax.abc);
-      },"json");
-  });
+  var swc = SWCModule();
+  swc.init_post();
 });
