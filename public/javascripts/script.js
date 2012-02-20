@@ -138,6 +138,7 @@ function SWCModule(){
               snippets = json.snippets;
               answers = json.answers;
               count = 0;
+              $("#pttID_form").remove();
               renderArticle();
             }
             else {
