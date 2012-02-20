@@ -67,12 +67,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 14, ../../sass/screen.scss */
+/* line 15, ../../sass/screen.scss */
 body {
   background: #bdbcba url("/images/bg-hatch.png");
 }
 
-/* line 17, ../../sass/screen.scss */
+/* line 18, ../../sass/screen.scss */
 h1 {
   color: #4b8db5;
   font-size: 2.25em;
@@ -80,7 +80,7 @@ h1 {
   margin-bottom: 0.667em;
 }
 
-/* line 22, ../../sass/screen.scss */
+/* line 23, ../../sass/screen.scss */
 h2 {
   color: #a0410d;
   font-size: 2.25em;
@@ -88,35 +88,35 @@ h2 {
   margin-bottom: 0.667em;
 }
 
-/* line 27, ../../sass/screen.scss */
+/* line 28, ../../sass/screen.scss */
 a:link {
   color: #4b8db5;
 }
 
-/* line 28, ../../sass/screen.scss */
+/* line 29, ../../sass/screen.scss */
 a:visited {
   color: #4b8db5;
 }
 
-/* line 29, ../../sass/screen.scss */
+/* line 30, ../../sass/screen.scss */
 p {
   font-size: 1em;
   line-height: 1.5em;
   margin-bottom: 1.5em;
 }
 
-/* line 34, ../../sass/screen.scss */
+/* line 35, ../../sass/screen.scss */
 td.box {
   text-align: center;
 }
 
-/* line 40, ../../sass/screen.scss */
+/* line 41, ../../sass/screen.scss */
 #header {
   background-image: url("/images/bg-header.png");
   height: 30px;
 }
 
-/* line 44, ../../sass/screen.scss */
+/* line 45, ../../sass/screen.scss */
 #footer {
   background-image: url("/images/bg-header.png");
   color: #cdcdcd;
@@ -125,7 +125,7 @@ td.box {
   padding-left: 50px;
 }
 
-/* line 51, ../../sass/screen.scss */
+/* line 52, ../../sass/screen.scss */
 #sidebar {
   background-color: #efefef;
   -moz-border-radius: 15px;
@@ -143,12 +143,12 @@ td.box {
   left: 50%;
   float: right;
 }
-/* line 63, ../../sass/screen.scss */
+/* line 64, ../../sass/screen.scss */
 #sidebar li {
   line-height: 1.5em;
 }
 
-/* line 65, ../../sass/screen.scss */
+/* line 66, ../../sass/screen.scss */
 #page-warp {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -166,55 +166,63 @@ td.box {
   width: 760px;
 }
 
-/* line 76, ../../sass/screen.scss */
+/* line 77, ../../sass/screen.scss */
 #main-container {
   width: 550px;
   float: left;
 }
 
-/* line 80, ../../sass/screen.scss */
+/* line 81, ../../sass/screen.scss */
 #title {
   background: url("/images/bg-diag.png") left bottom repeat-x;
   padding: 0 0 30px;
   margin-bottom: 40px;
 }
 
-/* line 85, ../../sass/screen.scss */
+/* line 86, ../../sass/screen.scss */
 .color-wheel > span {
-  display: block;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
   float: left;
   top: 0;
   width: 20%;
   height: 4px;
 }
+/* line 7, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.color-wheel > span {
+  *display: inline;
+}
 
-/* line 93, ../../sass/screen.scss */
+/* line 95, ../../sass/screen.scss */
 .color-wheel .f1 {
   left: 0;
   background: #f3a01e;
 }
-/* line 94, ../../sass/screen.scss */
+/* line 96, ../../sass/screen.scss */
 .color-wheel .f2 {
   left: 21%;
   background: #d05d2a;
 }
-/* line 95, ../../sass/screen.scss */
+/* line 97, ../../sass/screen.scss */
 .color-wheel .f3 {
   left: 41%;
   background: #9dc425;
 }
-/* line 96, ../../sass/screen.scss */
+/* line 98, ../../sass/screen.scss */
 .color-wheel .f4 {
   left: 61%;
   background: #4b8db5;
 }
-/* line 97, ../../sass/screen.scss */
+/* line 99, ../../sass/screen.scss */
 .color-wheel .f5 {
   left: 81%;
   background: #7c48b5;
 }
 
-/* line 99, ../../sass/screen.scss */
+/* line 101, ../../sass/screen.scss */
 .clear {
   clear: left;
 }

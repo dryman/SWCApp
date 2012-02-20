@@ -4,6 +4,7 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/css3";
 @import "compass/css3/images";
 @import "compass/css3/border-radius";
 @import "compass/utilities/color/contrast";
@@ -83,7 +84,8 @@ table {
   margin-bottom: 40px;
 }
 .color-wheel > span {
-  display: block;
+  @include inline-block;
+  //display: block;
   float:left;
   top:0;
   width:20%;
