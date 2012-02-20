@@ -7,17 +7,36 @@
 @import "compass/css3/images";
 @import "compass/css3/border-radius";
 @import "compass/utilities/color/contrast";
+@import "compass/typography/vertical_rhythm";
 
 $bg-color: #fcfcfc;
 
 body {
    background: #bdbcba url("/images/bg-hatch.png");
 }
-h1 { color: #4b8db5; font-size: 56px; }
-h2 { color: #a0410d; font-size: 28px; }
+h1 { 
+  color: #4b8db5; 
+  @include adjust-font-size-to(36px); 
+  @include trailer(1,36px);
+}
+h2 { 
+  color: #a0410d; 
+  @include adjust-font-size-to(36px); 
+  @include trailer(1,36px);
+}
 a:link {color: #4b8db5;}
 a:visited {color: #4b8db5;}
-p { font-size: 18px; margin: 0 0 15px 0; }
+p { 
+  @include adjust-font-size-to(16px); 
+  @include trailer(1,16px);
+  //margin: 0 0 15px 0; 
+}
+td.box {
+  text-align: center;
+}
+table {
+  //border: 1px solid #f00;
+}
 #header {
   background-image: url("/images/bg-header.png");
   height:30px;

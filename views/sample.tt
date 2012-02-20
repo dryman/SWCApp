@@ -1,0 +1,51 @@
+<div id="page">
+      <div id="page-warp">
+            <div id="main-container">
+              <div id="title"><h1>怕回營… 新兵蹲高鐵站發抖</h1></div>
+              
+              <div id="content"><div class="iis-content ">
+
+<p>海軍陸戰隊蘇姓新兵每逢收假要返營就怕得發抖，瑟縮在高鐵左營站公廁旁，驚動高鐵警察及站方人員。精神科醫師陳永興表示，這名新兵很可能有恐慌症，應儘速轉介就醫。
+</p>
+<p>蘇姓新兵日前和袍澤自北部搭高鐵南下左營，到站後蹲在男廁出口旁，全身發抖，並發出低沈的「嗚嗚」聲還猛咬牙。旅客發現報警，鐵路警察局高鐵警務段高雄分駐所警員趕抵，請來義大醫院駐站護士推輪椅要送蘇就醫。
+</p><p>護士及警員問蘇「怎麼了？」他瑟縮不語抖個不停；剛上完廁所的朱姓新兵趨前關切，表示蘇姓新兵每次收假就這樣。警方留下蘇的姓名、電話後，將他交由朱姓新兵帶到毗鄰左營站的「彩虹市集」，由陸戰隊官員接手處置。
+</p><p>警方說，搭高鐵趕收假的國軍官兵相當多，陸戰隊員不敢回營躲在廁所旁發抖還是頭一遭！
+</p><p>「這名新兵的症狀聽起來像有恐慌症」，宜蘭羅東聖母醫院院長陳永興說，是否如此還要臨床診斷。恐慌症狀況多，有人懼高，有的怕人多；有人開車或坐車坐到一半會怕，他建議軍方速將蘇轉介就醫。
+</p><p>陸戰隊指揮部政戰主任蔡鴻圖說，陸戰隊很重視新兵適應情形，賦予連隊的班、排長責任去注意，隨時了解新兵動態；處理不來，會轉介給旅部的心理輔導官，還是無法解決就送醫。
+</p><p>陸戰隊指揮官潘進隆認為，現在的陸戰隊新兵抗壓性較差。早年陸戰隊義務役是三年，磨到第二年就是老兵；現在役期只剩一年，到退伍了還是新兵。 </p></div></div>
+      <div class="clear"></div>
+      </div>
+
+      <div id="sidebar">
+        <h2>Side Bar</h2>
+        <ul id="sidebar-items">
+          <li>
+            <h3>Join the community</h3>
+            <ul class="links">
+
+              <li><a href="http://perldancer.org/">PerlDancer</a></li>
+              <li><a href="http://twitter.com/PerlDancer/">Official Twitter</a></li>
+              <li><a href="http://github.com/sukria/Dancer/">GitHub Community</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <h3>Browse the documentation</h3>
+
+            <ul class="links">
+              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Introduction.pod">Introduction</a></li>
+              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Cookbook.pod">Cookbook</a></li>
+              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Deployment.pod">Deployment Guide</a></li>
+              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Tutorial.pod" title="a tutorial to build a small blog engine with Dancer">Tutorial</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+      <div class="clear"></div>
+</div>
+
+
+
+</div>

@@ -51,7 +51,7 @@ var keycode = {
 
 console.log("hello world");
 
-function SWCModule(){
+var swc = function SWCModule(){
   var count;
   var records = new Array()
   var ajax_content;
@@ -104,6 +104,15 @@ function SWCModule(){
   };
   var renderSnippet = function () {
     console.log("renderSnippet");
+    $('#title > h1').html('驗證');
+    $('#content').empty();
+    $('#content').append('<form id="snippet_form" action="/finish" method="post"><table id="snippet_table"><tbody></tbody></table></form>');
+    var i;
+    for (i=0; i < 5; i++){
+      $('#snippet_table').append('<tr><td>'+snippets[i]+'</td><td class="box"><input type="checkbox" name="checkbox'+i+'"/></td></tr')
+    }
+    $('#snippet_table').append('<tr><td></td><td><input type="submit" name="submit" value="submit" /></td></tr>');
+      
     // render it
     // wait post, do post
     /*
@@ -153,9 +162,8 @@ function SWCModule(){
     articles: articles,
     pttid: pttid
   };
-};
+}();
 
 $(function(){
-  var swc = SWCModule();
   swc.init_post();
 });

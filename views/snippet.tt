@@ -1,0 +1,54 @@
+<div id="page">
+      <div id="page-warp">
+            <div id="main-container">
+              <div id="title"><h1>驗證</h1></div>
+              
+              <div id="content"><form id="snippet_form"><table id="snippet_table"><tbody><tr><td><div class="snippet">
+<p>「GiGi」梁詠琪今年10月3日閃婚，下嫁認識5個月的西班牙籍老公Sergio，最新一期「東方新地」週刊報導，GiGi一度聲稱婚後要隨老公移居西班牙，日前卻拍到兩人在香港逛平價家具，似乎要定居香港，梁詠琪想當西班牙貴婦的願望夢碎，婚後計劃完全走樣。</p>
+</div></td><td class="box"><input type="checkbox"
+name="checkbox0"></td></tr><tr><td><div
+class="snippet"><p>華仔的老婆朱麗倩懷孕成功，葉德嫻深信他會是個好爸爸，還贊成他停工陪太太，並打算送書給他的小孩當禮物。不過葉德嫻跟親生兒女卻沒有很親，她笑說：「我沒有良心！我喜歡自己一個人住。」受訪時她突然大喊一聲，聲音宏亮有如獅吼，「聲音不用就沒了，我就是這樣罵佣人！」她透露明年將在香港舉辦告別歌壇演唱會，趁聲音狀況還不錯時唱最後一次，然後「封麥」。</p></div></td><td
+class="box"><input type="checkbox" name="checkbox1"></td></tr><tr><td><div
+class="snippet"><p>由陳柏霖和林依晨，主演的偶像劇，昨晚播出大結局，男女主角有情人終成眷屬，收視率也飆高5.51！其中在劇中，男主角決定從新加坡請調回台灣結婚，這個橋段收視暴衝到6.97，等於有153.55萬人同時鎖定！不過也有網友直批最後一集，嚴重拖戲，懷疑該不會是沒梗了吧！</p></div></td><td
+class="box"><input type="checkbox" name="checkbox2"></td></tr><tr><td><div
+class="snippet"><p>曾雅妮前9洞就賺進4個博蒂，沒有任何柏忌，加上同組出發的南韓選手梁熙英第9洞失手打出3柏忌，妮妮前9洞打完，就以8桿遙遙領先，提前鎖定勝利。</p></div></td><td
+class="box"><input type="checkbox" name="checkbox3"></td></tr><tr><td><div class="snippet">
+<p>國人最懷念的行政院長孫運璿5年前辭世，中風多年，他的夫人俞蕙萱一直守在他的身旁靜靜陪伴，卸下公職之後，也陪同夫婿宣導天天量血壓的公益活動，被譽為是台灣「官夫人榜樣」，沒想到上個月突然中風，12月9日因為心肺衰竭病逝，享壽93歲，孫家人維持一貫低調作風，沒舉辦公祭，甚至在報紙刊登訃聞也只有一小角，始終秉持著孫運璿的清廉風格，即使辭世，也沒讓太多人知道，風範更令人懷念。
+</p>
+</div></td><td class="box"><input type="checkbox" name="checkbox4"></td></tr><tr><td></td><td><input type="submit" name="submit" value="submit"></td></tr></tbody></table></form></div>
+      <div class="clear"></div>
+      </div>
+
+      <div id="sidebar">
+        <h2>Side Bar</h2>
+        <ul id="sidebar-items">
+          <li>
+            <h3>Join the community</h3>
+            <ul class="links">
+
+              <li><a href="http://perldancer.org/">PerlDancer</a></li>
+              <li><a href="http://twitter.com/PerlDancer/">Official Twitter</a></li>
+              <li><a href="http://github.com/sukria/Dancer/">GitHub Community</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <h3>Browse the documentation</h3>
+
+            <ul class="links">
+              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Introduction.pod">Introduction</a></li>
+              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Cookbook.pod">Cookbook</a></li>
+              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Deployment.pod">Deployment Guide</a></li>
+              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Tutorial.pod" title="a tutorial to build a small blog engine with Dancer">Tutorial</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+      <div class="clear"></div>
+</div>
+
+
+
+</div>

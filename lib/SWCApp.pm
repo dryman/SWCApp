@@ -14,11 +14,11 @@ get '/' => sub {
     template 'index';
 };
 
-get '/example' => sub {
-  { 
-    hello => "The title is changed\n",
-    cool => "haha",
-  }
+get '/sample' => sub {
+  template 'sample';
+};
+get '/snippet' => sub {
+  template 'snippet';
 };
 
 post '/ajax' => sub {
