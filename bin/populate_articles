@@ -1,0 +1,62 @@
+#!/usr/bin/env perl
+use common::sense;
+use autodie;
+use lib 'lib';
+use SWCApp::DB;
+use Mojo::DOM;
+
+my $schema = SWCApp::DB
+  ->connect("dbi:SQLite:dbname=development.db");
+my $article_rs = $schema->resultset('Article');
+opendir my $dh, "data/1/";
+my @dirs = grep /^[^.]/, readdir $dh;
+closedir $dh;
+
+my $cluster = 0;
+my $count = 0;
+
+my $dir="random";
+opendir my $dh, "data/1/$dir";
+foreach my $file (grep(/\.html$/, readdir $dh)) {
+  open my $fh, "<data/1/$dir/$file";
+  local $/= undef;
+  my $dom = Mojo::DOM->new(<$fh>);
+  close $fh;
+  $file =~ s/\.html//;
+  say $count++, "\t$cluster\t$file";
+
+  my $content = $dom->at('div.iis-content')->to_xml;
+  my $snippet = $dom->at('div.snippet')->to_xml;
+  $article_rs->create({ 
+    title => $file, 
+    snippet => $snippet,
+    content => $content, 
+    cluster => $cluster, 
+  });
+}
+closedir $dh;
+
+$cluster++;
+
+foreach my $dir (grep {!/random/} @dirs) {
+  opendir my $dh, "data/1/$dir";
+  foreach my $file (grep(/\.html$/, readdir $dh)) {
+    open my $fh, "<data/1/$dir/$file";
+    local $/= undef;
+    my $dom = Mojo::DOM->new(<$fh>);
+    close $fh;
+    $file =~ s/\.html//;
+
+    say $count++, "\t$cluster\t$file";
+    my $content = $dom->at('div.iis-content')->to_xml;
+    my $snippet = $dom->at('div.snippet')->to_xml;
+    $article_rs->create({ 
+      title => $file, 
+      snippet => $snippet,
+      content => $content, 
+      cluster => $cluster, 
+    });
+  }
+  closedir $dh;
+  $cluster++;
+}

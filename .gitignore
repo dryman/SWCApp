@@ -4,6 +4,7 @@
 
 build/
 
+.sass-cache/
 *.pbxuser
 *.perspective
 *.perspectivev3
