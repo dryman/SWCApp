@@ -4,6 +4,8 @@
 
 # Your application's name
 appname: "SWCApp"
+warnings: 0
+traces: 1
 
 # The default layout to use for your application (located in
 # views/layouts/main.tt)

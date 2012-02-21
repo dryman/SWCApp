@@ -3,7 +3,8 @@
             <div id="main-container">
               <div id="title"><h1>驗證</h1></div>
               
-              <div id="content"><form id="snippet_form"><table id="snippet_table"><tbody><tr><td><div class="snippet">
+              <div id="content"><form id="snippet_form" action="/submit"
+              method="post"><table id="snippet_table"><tbody><tr><td><div class="snippet">
 <p>「GiGi」梁詠琪今年10月3日閃婚，下嫁認識5個月的西班牙籍老公Sergio，最新一期「東方新地」週刊報導，GiGi一度聲稱婚後要隨老公移居西班牙，日前卻拍到兩人在香港逛平價家具，似乎要定居香港，梁詠琪想當西班牙貴婦的願望夢碎，婚後計劃完全走樣。</p>
 </div></td><td class="box"><input type="checkbox"
 name="checkbox0"></td></tr><tr><td><div
@@ -15,7 +16,10 @@ class="snippet"><p>曾雅妮前9洞就賺進4個博蒂，沒有任何柏忌，�
 class="box"><input type="checkbox" name="checkbox3"></td></tr><tr><td><div class="snippet">
 <p>國人最懷念的行政院長孫運璿5年前辭世，中風多年，他的夫人俞蕙萱一直守在他的身旁靜靜陪伴，卸下公職之後，也陪同夫婿宣導天天量血壓的公益活動，被譽為是台灣「官夫人榜樣」，沒想到上個月突然中風，12月9日因為心肺衰竭病逝，享壽93歲，孫家人維持一貫低調作風，沒舉辦公祭，甚至在報紙刊登訃聞也只有一小角，始終秉持著孫運璿的清廉風格，即使辭世，也沒讓太多人知道，風範更令人懷念。
 </p>
-</div></td><td class="box"><input type="checkbox" name="checkbox4"></td></tr><tr><td></td><td><input type="submit" name="submit" value="submit"></td></tr></tbody></table></form></div>
+</div></td><td class="box"><input type="checkbox"
+name="checkbox4"></td></tr><tr><td><textarea name="comment"
+rows="10">請在此填入您的寶貴意見</textarea></td><td><input type="submit" name="submit" value="submit"></td></tr></tbody></table>
+</form></div>
       <div class="clear"></div>
       </div>
 

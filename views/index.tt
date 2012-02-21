@@ -13,46 +13,45 @@
 <div id="page">
       <div id="page-warp">
             <div id="main-container">
-              <div id="title"><h1>Title</h1></div>
+              <div id="title"><h1>閱讀大量網路文獻行為研究</h1></div>
+              <hr/>
+              <div id="content">
+                <p>您好，這是一份專題製作的網路測驗，想要了解閱讀大量網路文獻時的行為規則。
+                您提供的寶貴意見，將作為本專題研究的重要資料參考。 </p>
+                <p>本測驗將給您<strong>五十則</strong>網路新聞（擷取自yahoo新聞），
+                請您逐則閱讀。如果您看到某則新聞之前看過類似的訊息，
+                請依照下列規則按鍵盤快速鍵回報訊息：</p>
+                  <ul class="block">
+                    <li>1 分鐘內看過這則新聞的類似新聞，請按 1 </li>
+                    <li>2 分鐘內看過這則新聞的類似新聞，請按 2 </li>
+                    <li>3 分鐘內看過這則新聞的類似新聞，請按 3 </li>
+                    <li>...依此類推 </li>
+                    <li>若認為是在 10 分鐘以上看過類似新聞，請按 0 </li>
+                    <li>如果沒看過類似新聞，請按 n 鍵來看下一則新聞</li>
+                    <hr/>
+                    <li>待五十篇文章測驗完成之後，會出現五個文章片段，請勾選您有印象看過的片段，我們會依此作為發送批幣之參考，以防止隨意瀏覽作答的投機客。</li>
+                  </ul>
+                <p>若您同意以上規則，請您在以下填入您的ptt id，測驗即將開始。之後我們會將批幣轉帳到您填入的帳號中。
+                此測驗的所有資料僅供學術之用，絕不對外公開，敬請安心作答。</p>
               <form action="/ajax" id="pttID_form" method="post">
-                <input name="pttid" placehoder="ptt id" type="text" />
+                <input name="pttid" placeholder="ptt id" type="text" />
                 <input name="submit" type="submit" value="go" />
                 <div id=result></div>
               </form>
-              <div id="content">
               </div>
       <div class="clear"></div>
       </div>
 
       <div id="sidebar">
-        <h2>Side Bar</h2>
+        <h2>操作提示欄</h2>
         <ul id="sidebar-items">
-          <li>
-            <h3>Join the community</h3>
-            <ul class="links">
-
-              <li><a href="http://perldancer.org/">PerlDancer</a></li>
-              <li><a href="http://twitter.com/PerlDancer/">Official Twitter</a></li>
-              <li><a href="http://github.com/sukria/Dancer/">GitHub Community</a></li>
-            </ul>
-          </li>
-          
-          <li>
-            <h3>Browse the documentation</h3>
-
-            <ul class="links">
-              <li><a
-              href="http://search.cpan.org/dist/Dancer/lib/Dancer/Introduction.pod">Introduction</a></li>
-              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Cookbook.pod">Cookbook</a></li>
-              <li><a href="http://search.cpan.org/dist/Dancer/lib/Dancer/Deployment.pod">Deployment Guide</a></li>
-              <li><a
-              href="http://search.cpan.org/dist/Dancer/lib/Dancer/Tutorial.pod"
-              title="a tutorial to build a small blog engine with Dancer">Tutorial</a></li>
-            </ul>
-          </li>
-
-        </ul>
-
+            <li>1 分鐘內看過類似新聞，請按 <strong>1</strong> </li>
+            <li>2 分鐘內看過類似新聞，請按 <strong>2</strong> </li>
+            <li>3 分鐘內看過類似新聞，請按 <strong>3</strong> </li>
+            <li>...依此類推 </li>
+            <li>10 分鐘以上，請按 <strong>0</strong> </li>
+            <li>如果沒看過類似新聞，請按 <strong>n</strong> 鍵來看下一則新聞</li>
+          </ul>
       </div>
       <div class="clear"></div>
 </div>

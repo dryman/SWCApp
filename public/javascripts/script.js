@@ -104,28 +104,35 @@ var swc = function SWCModule(){
   };
   var renderSnippet = function () {
     console.log("renderSnippet");
-    $('#title > h1').html('驗證');
+    $('#title > h1').html('驗證瀏覽效果');
     $('#content').empty();
-    $('#content').append('<form id="snippet_form" action="/finish" method="post"><table id="snippet_table"><tbody></tbody></table></form>');
+    $('#content').append('<p>請勾選您有印象看過的片段，我們會依此作為發送批幣之參考，以防止隨意瀏覽作答的投機客。</p><hr/>');
+    $('#content').append('<form id="snippet_form" action="/submit" method="post"><table id="snippet_table"><tbody></tbody></table></form>');
     var i;
     for (i=0; i < 5; i++){
       $('#snippet_table').append('<tr><td>'+snippets[i]+'</td><td class="box"><input type="checkbox" name="checkbox'+i+'"/></td></tr')
     }
-    $('#snippet_table').append('<tr><td></td><td><input type="submit" name="submit" value="submit" /></td></tr>');
+    $('#snippet_table').append('<tr><td><textarea name="comments" rows=20>請在此填入您的寶貴意見</textarea></td><td><input type="submit" name="submit" value="submit" /></td></tr>');
       
-    // render it
-    // wait post, do post
-    /*
-    $('#snippet').submit(function(ev){
-      ev.preventDevault();
+    $('#snippet_form').submit(function(event){
+      event.preventDefault();
       var $form = $(this);
-      $.post('/upload',{
-        // our records
-      },function(json){
-        renderThankyou();
-      },"json");
+      var user_answers = new Array();
+      $('input[type=checkbox]').each(function(){user_answers.push(this.checked? 1: 0);});
+      $.post('/submit',
+        { 
+          pttid: pttid, 
+          records: JSON.stringify(records),
+          user_answer: JSON.stringify(user_answers),
+          answer: JSON.stringify(answers),
+          comment: $('textarea').val()
+        },
+        function(json){
+          $('#title > h1').html(json.title);
+          $('#content').html(json.content);
+          $('#sidebar').remove();
+        },"json");
     });
-    */
   };
   var renderThankyou = function () {
     // render it
@@ -136,6 +143,7 @@ var swc = function SWCModule(){
         event.preventDefault();
         var $form = $(this);
         var $term = $form.find('input[name="pttid"]').val()
+        pttid = $term;
         if ($term === '') {
           alert("請填入您的ptt id！");
           return false;

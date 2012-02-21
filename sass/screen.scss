@@ -22,15 +22,23 @@ h1 {
 }
 h2 { 
   color: #a0410d; 
-  @include adjust-font-size-to(36px); 
-  @include trailer(1,36px);
+  @include adjust-font-size-to(24px); 
+  @include trailer(1,24px);
 }
+strong { color: #a0410d; font-weight: bold;}
 a:link {color: #4b8db5;}
 a:visited {color: #4b8db5;}
+textarea {width: 95%;}
 p { 
   @include adjust-font-size-to(16px); 
   @include trailer(1,16px);
   //margin: 0 0 15px 0; 
+}
+.block {
+  margin: 10px;
+  padding: 10px;
+  background-color: darken($bg-color,5%);
+  @include border-radius(15px);
 }
 td.box {
   text-align: center;
@@ -60,8 +68,10 @@ table {
   top: 180px;
   left: 50%;
   float: right;
-
-  li { line-height: 1.5em;}
+}
+li { 
+  @include adjust-font-size-to(16px); 
+  //@include trailer(1,18px);
 }
 #page-warp {
   @include border-radius(15px);
@@ -78,10 +88,19 @@ table {
   width: 550px; 
   float: left;
 }
-#title {
+// #title {
+//   background: url("/images/bg-diag.png") left bottom repeat-x;
+//   padding: 0 0 1px;
+//   margin-bottom: 30px;
+// }
+hr {
   background: url("/images/bg-diag.png") left bottom repeat-x;
-  padding: 0 0 30px;
-  margin-bottom: 40px;
+  height: 10px;
+  border: 0;
+  clear:both;
+  //padding: 0 0 1px;
+  margin: 16px 0px;
+  //margin-bottom: 30px;
 }
 .color-wheel > span {
   @include inline-block;

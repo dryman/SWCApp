@@ -1,6 +1,7 @@
 package SWCApp;
 use 5.010;
 use utf8;
+use DateTime;
 use Dancer ':syntax';
 use FindBin '$Bin';
 use List::Util 'shuffle';
@@ -20,8 +21,56 @@ get '/sample' => sub {
 get '/snippet' => sub {
   template 'snippet';
 };
+post '/submit' => sub {
+  my $dt = DateTime->now;
+  my $file_name = $dt->ymd.'-'.$dt->hms.'-'.request->address;
+  my %hash = params;
+  my $user_answer = from_json param "user_answer";
+  my $answer = from_json param "answer";
+  my $records = from_json param "records";
+  my $comment = param "comment";
+  debug $comment;
+  my $pttid = param "pttid";
+  {
+    open my $fh, ">:encoding UTF-8)", "public/json/$file_name.json";
+    my $string = <<STR;
+{
+"pttid": "$pttid", 
+"user_answer": $hash{user_answer},
+"answer": $hash{answer},
+"comment": "$comment",
+"records": $hash{records}
+}
+STR
+    debug $string;
+    print $fh $string;
+    close $fh;
+  }
+  {
+    open my $fh, ">public/csv/$file_name.csv";
+    print $fh <<CSV;
+% pttid = $pttid
+% user_answer = @$user_answer
+% answer = @$answer
+% comment = $comment
+id, cluster, msec, diff, option
+CSV
+    print $fh "$_->{id}, $_->{cluster}, $_->{msec}, $_->{diff}, $_->{option}\n" for @$records;
+    close $fh;
+  }
+  my $content = <<CONTENT;
+ <p> 謝謝您協術我們進行這份專題製作的網路測驗，您的回饋是我們進步的動力。</p> 
+ <p>我們會在數天後將400批幣（稅前）匯入至您的帳戶，再次感謝您。</p>
+CONTENT
+
+  {
+    title => "感謝您的合作",
+    content => $content,
+  }
+};
 
 post '/ajax' => sub {
+  debug param "pttid";
   my $schema = SWCApp::DB->connect('dbi:SQLite:dbname=development.db',"","",{sqlite_unicode=>1});
   my $r_rs = $schema->resultset('RandomSet');
 
