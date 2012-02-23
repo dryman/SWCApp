@@ -22,20 +22,27 @@ get '/snippet' => sub {
   template 'snippet';
 };
 post '/submit' => sub {
+  my $schema = SWCApp::DB->connect('dbi:SQLite:dbname=development.db',"","",{sqlite_unicode=>1});
   my $dt = DateTime->now;
-  my $file_name = $dt->ymd.'-'.$dt->hms.'-'.request->address;
   my %hash = params;
   my $user_answer = from_json param "user_answer";
   my $answer = from_json param "answer";
   my $records = from_json param "records";
-  my $comment = param "comment";
-  debug $comment;
   my $pttid = param "pttid";
+  my $comment = param "comment";
+  my $ip = request->remote_address;
+  my $ua = request->user_agent;
+  my $file_name = $dt->ymd.'-'.$dt->hms('-').'-'.$pttid;
+
+  $schema->resultset('User')->update_or_create({ptt => $pttid});
+
   {
     open my $fh, ">public/json/$file_name.json";
     my $string = <<STR;
 {
 "pttid": "$pttid", 
+"ip": "$ip",
+"User-Agent": "$ua",
 "user_answer": $hash{user_answer},
 "answer": $hash{answer},
 "comment": "$comment",
@@ -47,16 +54,20 @@ STR
     close $fh;
   }
   {
-    open my $fh, ">public/csv/$file_name.csv";
-    print $fh <<CSV;
-% pttid = $pttid
-% user_answer = @$user_answer
-% answer = @$answer
-% comment = $comment
-id, cluster, msec, diff, option
+    open my $fhi, ">public/csv/$file_name.info";
+    print $fhi <<CSV;
+%pttid=$pttid
+%ip=$ip
+%User-Agent=$ua
+%user_answer=@$user_answer
+%answer=@$answer
+%comment=$comment
 CSV
-    print $fh "$_->{id}, $_->{cluster}, $_->{msec}, $_->{diff}, $_->{option}\n" for @$records;
-    close $fh;
+    close $fhi;
+    open my $fhc, ">public/csv/$file_name.csv";
+    print $fhc "id, cluster, msec, diff, option\n";
+    print $fhc "$_->{id}, $_->{cluster}, $_->{msec}, $_->{diff}, $_->{option}\n" for @$records;
+    close $fhc;
   }
   my $content = <<CONTENT;
  <p> 謝謝您協術我們進行這份專題製作的網路測驗，您的回饋是我們進步的動力。</p> 

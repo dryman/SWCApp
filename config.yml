@@ -4,8 +4,6 @@
 
 # Your application's name
 appname: "SWCApp"
-warnings: 0
-traces: 1
 
 # The default layout to use for your application (located in
 # views/layouts/main.tt)
@@ -21,7 +19,6 @@ charset: "UTF-8"
 # template_toolkit: TT
 
 template: "simple"
-auto_reload: 1
 
 # template: "template_toolkit"
 # engines:

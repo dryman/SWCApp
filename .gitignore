@@ -3,6 +3,8 @@
 *~.nib
 
 build/
+public/csv/*
+public/json/*
 
 .sass-cache/
 *.pbxuser

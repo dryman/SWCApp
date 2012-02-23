@@ -30,8 +30,8 @@ CREATE TABLE session (
 CREATE TABLE user (
   id INTEGER PRIMARY KEY NOT NULL,
   ptt text NOT NULL,
-  userAgent text NOT NULL,
-  set_id integer NOT NULL
+  userAgent text,
+  set_id integer
 );
 CREATE UNIQUE INDEX user_ptt ON user (ptt);
 --
