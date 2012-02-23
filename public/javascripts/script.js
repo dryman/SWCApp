@@ -59,6 +59,12 @@ var swc = function SWCModule(){
   var te;
   var storeRecord = function (option) {
     te = new Date();
+    /*
+    if ((te.getTime() - ts.getTime()) < 5000){
+      alert('您文章看得太快了，請照一般閱讀速度閱讀');
+      return;
+    }
+    */
     var article = articles[count];
     records.push({
       id: article.id,
@@ -139,11 +145,13 @@ var swc = function SWCModule(){
         event.preventDefault();
         var $form = $(this);
         var $term = $form.find('input[name="pttid"]').val()
+        var parsePtt = /^[A-Za-z][0-9A-Za-z]+$/;
         pttid = $term;
-        if ($term === '') {
-          alert("請填入您的ptt id！");
+        if (! parsePtt.test($term)){
+          alert("請填入合法的ptt id!");
           return false;
         }
+        
         $.post('/ajax', {pttid: $term},
           function(json){
             if (json.success) {
