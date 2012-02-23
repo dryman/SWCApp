@@ -32,7 +32,7 @@ post '/submit' => sub {
   debug $comment;
   my $pttid = param "pttid";
   {
-    open my $fh, ">:encoding UTF-8)", "public/json/$file_name.json";
+    open my $fh, ">public/json/$file_name.json";
     my $string = <<STR;
 {
 "pttid": "$pttid", 
