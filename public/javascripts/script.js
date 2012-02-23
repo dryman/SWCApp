@@ -18,14 +18,10 @@ var key_manager = function () {
     },
     clearKeys: function() {
       if ($.browser.mozilla){
-        document.onkeypress = function(e){
-          console.log("keypress cleared");
-        };
+        document.onkeypress = function(e){ };
       }
       else {
-        document.onkeydown = function(e){
-          console.log("keydown cleared");
-        };
+        document.onkeydown = function(e){ };
       }
     }
   }
@@ -84,7 +80,7 @@ var swc = function SWCModule(){
     var article = articles[count];
     $('#title > h1').html(article.title);
     $('#content').html(article.content);
-    console.log("renderArticle "+ article.title +" count = " + count);
+    $('html,body').animate({scrollTop: 0}, 1000);
     ts = new Date();
     key_manager.registerKey(function(e){
       switch(e){
@@ -103,7 +99,6 @@ var swc = function SWCModule(){
     });
   };
   var renderSnippet = function () {
-    console.log("renderSnippet");
     $('#title > h1').html('驗證瀏覽效果');
     $('#content').empty();
     $('#content').append('<p>請勾選您有印象看過的片段，我們會依此作為發送批幣之參考，以防止隨意瀏覽作答的投機客。</p><hr/>');
@@ -113,6 +108,7 @@ var swc = function SWCModule(){
       $('#snippet_table').append('<tr><td>'+snippets[i]+'</td><td class="box"><input type="checkbox" name="checkbox'+i+'"/></td></tr')
     }
     $('#snippet_table').append('<tr><td><textarea name="comments" rows=20>請在此填入您的寶貴意見</textarea></td><td><input type="submit" name="submit" value="submit" /></td></tr>');
+    $('html,body').animate({scrollTop: 0}, 1000);
       
     $('#snippet_form').submit(function(event){
       event.preventDefault();
@@ -159,7 +155,6 @@ var swc = function SWCModule(){
               renderArticle();
             }
             else {
-              console.log("failed");
             }
           },"json");
       });
