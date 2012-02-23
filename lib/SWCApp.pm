@@ -12,7 +12,10 @@ our $VERSION = '0.1';
 
 
 get '/' => sub {
-    template 'index';
+  my $schema = SWCApp::DB->connect('dbi:SQLite:dbname=development.db',"","",{sqlite_unicode=>1});
+  my $count = $schema->resultset('User')->search()->count;
+  debug "number of user is $count";
+  $count <= 100 ? template 'index' : template 'sample';
 };
 
 get '/sample' => sub {
