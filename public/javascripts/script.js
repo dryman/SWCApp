@@ -11,7 +11,7 @@ var key_manager = function () {
         };
       } else {
         document.onkeydown = function(e){
-          var key_code = $.browser.ie ? e.KeyCode : e.which;
+          var key_code = $.browser.msie ? event.keyCode : e.which;
           callBack(key_code);
         };
       }
@@ -43,7 +43,7 @@ var keycode = {
   "eight": 56, 
   "nine": 57,
   "n": 78
-}
+};
 
 console.log("hello world");
 
