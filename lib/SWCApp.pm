@@ -1,5 +1,5 @@
 package SWCApp;
-use 5.010;
+use 5.014;
 use utf8;
 use DateTime;
 use Dancer ':syntax';
@@ -68,8 +68,10 @@ STR
 CSV
     close $fhi;
     open my $fhc, ">public/csv/$file_name.csv";
-    print $fhc "id, cluster, msec, diff, option\n";
-    print $fhc "$_->{id}, $_->{cluster}, $_->{msec}, $_->{diff}, $_->{option}\n" for @$records;
+    print $fhc "run, id, cluster, msec, diff, option\n";
+    while (my ($idx, $record) = each @$records){
+      print $fhc "$idx, $record->{id}, $record->{cluster}, $record->{msec}, $record->{diff}, $record->{option}\n";
+    }
     close $fhc;
   }
   my $content = <<CONTENT;
