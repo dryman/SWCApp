@@ -59,18 +59,19 @@ STR
   {
     open my $fhi, ">public/csv/$file_name.info";
     print $fhi <<CSV;
-%pttid=$pttid
-%ip=$ip
-%User-Agent=$ua
-%user_answer=@$user_answer
-%answer=@$answer
-%comment=$comment
+pttid=$pttid
+ip=$ip
+User-Agent=$ua
+user_answer=@$user_answer
+answer=@$answer
+comment=$comment
 CSV
     close $fhi;
     open my $fhc, ">public/csv/$file_name.csv";
     print $fhc "run, id, cluster, msec, diff, option\n";
     while (my ($idx, $record) = each @$records){
-      print $fhc "$idx, $record->{id}, $record->{cluster}, $record->{msec}, $record->{diff}, $record->{option}\n";
+      my $x = $idx+1;
+      print $fhc "$x, $record->{id}, $record->{cluster}, $record->{msec}, $record->{diff}, $record->{option}\n";
     }
     close $fhc;
   }
