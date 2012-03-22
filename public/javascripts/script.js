@@ -88,7 +88,11 @@ var swc = function SWCModule(){
     ts = new Date();
     key_manager.registerKey(function(e){
       switch(e){
-        case 48: storeRecord(0); break;
+        case 120: 
+          var parseNum=/^[0-9]+$/;
+          var num=0;
+          while (num=prompt("請輸入您認為的時間:","10") && !parsePtt.test(num)){}
+          storeRecord(num); break;
         case 49: storeRecord(1); break;
         case 50: storeRecord(2); break;
         case 51: storeRecord(3); break;
