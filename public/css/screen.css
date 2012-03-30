@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -130,17 +130,23 @@ p {
 }
 
 /* line 43, ../../sass/screen.scss */
+td {
+  border: 1px dashed #DDD;
+  padding: 8px;
+}
+
+/* line 47, ../../sass/screen.scss */
 td.box {
   text-align: center;
 }
 
-/* line 49, ../../sass/screen.scss */
+/* line 53, ../../sass/screen.scss */
 #header {
   background-image: url("/images/bg-header.png");
   height: 30px;
 }
 
-/* line 53, ../../sass/screen.scss */
+/* line 57, ../../sass/screen.scss */
 #footer {
   background-image: url("/images/bg-header.png");
   color: #cdcdcd;
@@ -149,7 +155,7 @@ td.box {
   padding-left: 50px;
 }
 
-/* line 60, ../../sass/screen.scss */
+/* line 64, ../../sass/screen.scss */
 #sidebar {
   background-color: #efefef;
   -moz-border-radius: 15px;
@@ -168,13 +174,13 @@ td.box {
   float: right;
 }
 
-/* line 72, ../../sass/screen.scss */
+/* line 76, ../../sass/screen.scss */
 li {
   font-size: 1em;
   line-height: 1.5em;
 }
 
-/* line 76, ../../sass/screen.scss */
+/* line 80, ../../sass/screen.scss */
 #page-warp {
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -192,13 +198,13 @@ li {
   width: 760px;
 }
 
-/* line 87, ../../sass/screen.scss */
+/* line 91, ../../sass/screen.scss */
 #main-container {
   width: 550px;
   float: left;
 }
 
-/* line 96, ../../sass/screen.scss */
+/* line 100, ../../sass/screen.scss */
 hr {
   background: url("/images/bg-diag.png") left bottom repeat-x;
   height: 10px;
@@ -207,7 +213,7 @@ hr {
   margin: 16px 0px;
 }
 
-/* line 105, ../../sass/screen.scss */
+/* line 109, ../../sass/screen.scss */
 .color-wheel > span {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -219,38 +225,38 @@ hr {
   width: 20%;
   height: 4px;
 }
-/* line 7, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, ../../../../.rvm/gems/ruby-1.9.2-p318/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .color-wheel > span {
   *display: inline;
 }
 
-/* line 114, ../../sass/screen.scss */
+/* line 118, ../../sass/screen.scss */
 .color-wheel .f1 {
   left: 0;
   background: #f3a01e;
 }
-/* line 115, ../../sass/screen.scss */
+/* line 119, ../../sass/screen.scss */
 .color-wheel .f2 {
   left: 21%;
   background: #d05d2a;
 }
-/* line 116, ../../sass/screen.scss */
+/* line 120, ../../sass/screen.scss */
 .color-wheel .f3 {
   left: 41%;
   background: #9dc425;
 }
-/* line 117, ../../sass/screen.scss */
+/* line 121, ../../sass/screen.scss */
 .color-wheel .f4 {
   left: 61%;
   background: #4b8db5;
 }
-/* line 118, ../../sass/screen.scss */
+/* line 122, ../../sass/screen.scss */
 .color-wheel .f5 {
   left: 81%;
   background: #7c48b5;
 }
 
-/* line 120, ../../sass/screen.scss */
+/* line 124, ../../sass/screen.scss */
 .clear {
   clear: left;
 }

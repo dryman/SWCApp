@@ -40,6 +40,10 @@ p {
   background-color: darken($bg-color,5%);
   @include border-radius(15px);
 }
+td {
+  border: 1px dashed #DDD;
+  padding: 8px;
+}
 td.box {
   text-align: center;
 }
