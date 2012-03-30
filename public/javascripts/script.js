@@ -93,10 +93,14 @@ var swc = function SWCModule(){
     key_manager.registerKey(function(e){
       switch(e){
         case 88: 
-          var parseNum=/^[0-9]+$/;
-          var num=0;
-          //while (num=prompt("請輸入您認為的時間:","10") && !parsePtt.test(num)){}
-          num = prompt("請輸入您認為的時間","10");
+          var parseNum=/^[1-9][0-9]+$/;
+          var num=null;
+          num=prompt("請輸入您認為的時間:","");
+          while (num===null || !parseNum.test(num)){
+            console.log("num is ",num);
+            num = prompt("輸入錯誤，請輸入數字10以上的分鐘數:","");
+          }
+          //num = prompt("請輸入您認為的時間","10");
           storeRecord(num); break;
         case 49: storeRecord(1); break;
         case 50: storeRecord(2); break;
