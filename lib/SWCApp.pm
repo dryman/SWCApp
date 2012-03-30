@@ -57,7 +57,7 @@ STR
     close $fh;
   }
   {
-    open my $fhi, ">public/csv/$file_name.info";
+    open my $fhi, ">public/csv2/$file_name.info";
     print $fhi <<CSV;
 pttid=$pttid
 ip=$ip
@@ -67,7 +67,7 @@ answer=@$answer
 comment=$comment
 CSV
     close $fhi;
-    open my $fhc, ">public/csv/$file_name.csv";
+    open my $fhc, ">public/csv2/$file_name.csv";
     print $fhc "run, id, cluster, msec, diff, option\n";
     while (my ($idx, $record) = each @$records){
       my $x = $idx+1;

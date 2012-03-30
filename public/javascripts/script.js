@@ -2,6 +2,8 @@
  * all rights reserved
  * GPL 2.1 license
  */
+
+var count5=0;
 var key_manager = function () {
   return {
     registerKey: function(callBack) {
@@ -59,10 +61,10 @@ var swc = function SWCModule(){
   var te;
   var storeRecord = function (option) {
     te = new Date();
-    if ((te.getTime() - ts.getTime()) < 5000){
-      alert('您文章看得太快了，請照一般閱讀速度閱讀');
-      return;
-    }
+    // if ((te.getTime() - ts.getTime()) < 5000){
+    //   alert('您文章看得太快了，請照一般閱讀速度閱讀');
+    //   return;
+    // }
     var article = articles[count];
     records.push({
       id: article.id,
@@ -72,7 +74,9 @@ var swc = function SWCModule(){
       option: option
     });
     count++;
-    if (count >= articles.length){
+    count5++;
+    if (count5>4 || count >= articles.length){
+    //if (count >= articles.length){
       key_manager.clearKeys();
       renderSnippet();
     }
@@ -88,10 +92,11 @@ var swc = function SWCModule(){
     ts = new Date();
     key_manager.registerKey(function(e){
       switch(e){
-        case 120: 
+        case 88: 
           var parseNum=/^[0-9]+$/;
           var num=0;
-          while (num=prompt("請輸入您認為的時間:","10") && !parsePtt.test(num)){}
+          //while (num=prompt("請輸入您認為的時間:","10") && !parsePtt.test(num)){}
+          num = prompt("請輸入您認為的時間","10");
           storeRecord(num); break;
         case 49: storeRecord(1); break;
         case 50: storeRecord(2); break;
@@ -109,6 +114,7 @@ var swc = function SWCModule(){
   var renderSnippet = function () {
     $('#title > h1').html('驗證瀏覽效果');
     $('#content').empty();
+    $('#sidebar').remove();
     $('#content').append('<p>請勾選您有印象看過的片段，我們會依此作為發送批幣之參考，以防止隨意瀏覽作答的投機客。</p><hr/>');
     $('#content').append('<form id="snippet_form" action="/submit" method="post"><table id="snippet_table"><tbody></tbody></table></form>');
     var i;
